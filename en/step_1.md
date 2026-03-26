@@ -1,70 +1,54 @@
 ## Set the stage
 
-
 ### Step 1
-Title for each instruction if more than one instrution on a page
-
+In the `setup()` function, decide on a good canvas size for your screen. The first value is for width and the second for height.
 
 --- code ---
 ---
-language: python
-filename: main.py
+language: javascript
+filename: sketch.py
 line_numbers: true
-line_number_start: 10
-line_highlights: 11
+line_number_start: 1
+line_highlights: 2
 ---
-
-Put code here
-
+function setup() {
+  createCanvas(700, 450)
+}
 --- /code ---
 
+### Step 2
+In the `draw()` function choose a colour for your background. The first number is for red, the second for green, and the third for blue.
+
+--- code ---
+---
+language: javascript
+filename: sketch.py
+line_numbers: true
+line_number_start: 5
+line_highlights: 6
+---
+function draw() {
+  background(50, 90, 200)
+  background()
+  moveFlockTarget()
+  drawFlockTarget()
+  updateBirds()
+  drawBirds()
+}
+--- /code ---
 
 ### Now run your code
 This is what you should see when you run your code.
 
+![](step_1.png)
 
-<div class="c-project-output">
-```
-WHAT THEY SHOULD SEE IF OUTPUT IS TEXT - OTHERWISE USE IMAGE
-```
-</div>
-
-
-<div class="c-project-output">
-<iframe src="https://editor.raspberrypi.org/en/embed/viewer/editor-turtle-snowflakes-complete" width="600" height="600" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen> </iframe>
-</div>
-
-
-> ### Tip
-> 
-> TIPS HERE
+### Tip
 {: .c-project-callout .c-project-callout--tip}
 
+- Change the size of your canvas so it fills as much space on your screen as possible.
+- Think about what background you would like for your creatures to fly in. Are they starlings at sunset, or bats at midnight?
 
-> ### Debugging
-> 
-> DEBUG HERE
+### Debugging
 {: .c-project-callout .c-project-callout--debug}
 
-
-
-Add code inline using `upticks` only
-
-
-Use ordered and unordered lists to break up long text
-- First item
-- Second item
-- Third item
-
-1. First item
-2. Second item
-3. Third item
-
-
-![alt text](image.jpg)
-
-
-[title](https://www.link.com)
-
-
-**bold text**
+- Make sure you are closing brackets `()` and using commas to separate numbers.
