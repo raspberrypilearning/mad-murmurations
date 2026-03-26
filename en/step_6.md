@@ -1,70 +1,72 @@
-## Main title
-
+## Show the flock target
 
 ### Step 1
-Title for each instruction if more than one instrution on a page
-
+Set `x` and `y` coordinates for your flock's target
 
 --- code ---
 ---
-language: python
-filename: main.py
+language: javascript
+filename: sketch.js
 line_numbers: true
-line_number_start: 10
-line_highlights: 11
+line_number_start: 1
+line_highlights: 2-3
 ---
+let birds = []
+let flockTargetX = 350
+let flockTargetY = 225
+--- /code ---
 
-Put code here
 
+### Step 2
+In the `drawFlockTarget()` function, draw a small circle. This will show the point your birds will follow later.
+
+--- code ---
+---
+language: javascript
+filename: sketch.js
+line_numbers: true
+line_number_start: 26
+line_highlights: 27-29
+---
+function drawFlockTarget() {
+  fill(255)
+  noStroke()
+  ellipse(flockTargetX, flockTargetY, 10, 10)
+}
+--- /code ---
+
+### Step 2
+Now choose a size and colour for your target. The three numbers in `fill()` are red, green, and blue. The last two numbers in `ellipse()` set the size.
+
+--- code ---
+---
+language: javascript
+filename: sketch.js
+line_numbers: true
+line_number_start: 1
+line_highlights: 2
+---
+function drawFlockTarget() {
+  fill(255, 200, 60)
+  noStroke()
+  ellipse(flockTargetX, flockTargetY, 14, 14)
+}
 --- /code ---
 
 
 ### Now run your code
 This is what you should see when you run your code.
 
+![](images/step_6.png)
 
-<div class="c-project-output">
-```
-WHAT THEY SHOULD SEE IF OUTPUT IS TEXT - OTHERWISE USE IMAGE
-```
-</div>
-
-
-<div class="c-project-output">
-<iframe src="https://editor.raspberrypi.org/en/embed/viewer/editor-turtle-snowflakes-complete" width="600" height="600" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen> </iframe>
-</div>
-
-
-> ### Tip
-> 
-> TIPS HERE
+### Tip
 {: .c-project-callout .c-project-callout--tip}
+- Choose a colour that stands out against your background.
+- Try making your target bigger or smaller to see what looks best.
+- You can imagine this point as the place your flock is trying to fly towards.
 
-
-> ### Debugging
-> 
-> DEBUG HERE
+### Debugging
 {: .c-project-callout .c-project-callout--debug}
-
-
-
-Add code inline using `upticks` only
-
-
-Use ordered and unordered lists to break up long text
-- First item
-- Second item
-- Third item
-
-1. First item
-2. Second item
-3. Third item
-
-
-![alt text](image.jpg)
-
-
-[title](https://www.link.com)
-
-
-**bold text**
+- Make sure you have spelled `flockTargetX` and `flockTargetY` correctly.
+- Check that `ellipse()` has four values, separated by commas.
+- Make sure `drawFlockTarget()` has opening and closing curly brackets `{}`.

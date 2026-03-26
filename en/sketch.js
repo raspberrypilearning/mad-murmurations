@@ -1,4 +1,6 @@
 let birds = []
+let flockTargetX = 350
+let flockTargetY = 225
 
 function setup() {
   createCanvas(700, 450)
@@ -24,6 +26,9 @@ function moveFlockTarget() {
 }
 
 function drawFlockTarget() {
+  fill(255, 200, 60)
+  noStroke()
+  ellipse(flockTargetX, flockTargetY, 14, 14)
 }
 
 function updateBirds() {
