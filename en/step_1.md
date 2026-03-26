@@ -43,10 +43,12 @@ This is what you should see when you run your code.
 ![](images/step_1.png)
 
 ### Tip
+{: .c-project-callout .c-project-callout--tip}
 - Change the size of your canvas so it fills as much space on your screen as possible.
 - Think about what background you would like for your creatures to fly in. Are they starlings at sunset, or bats at midnight?
-{: .c-project-callout .c-project-callout--tip}
+
 
 ### Debugging
-- Make sure you are closing brackets `()` and using commas to separate numbers.
 {: .c-project-callout .c-project-callout--debug}
+- Make sure you are closing brackets `()` and using commas to separate numbers.
+
