@@ -4,7 +4,6 @@ let flockTargetY = 225
 
 function setup() {
   createCanvas(700, 450)
-
   for (let count = 0; count < 40; count++) {
     birds.push({
       x: width / 2 + random(-60, 60),
@@ -16,7 +15,7 @@ function setup() {
 }
 
 function draw() {
-  background(15, 20, 40, 90)
+  background(50, 90, 200, 100)
   moveFlockTarget()
   drawFlockTarget()
   updateBirds()
@@ -24,14 +23,14 @@ function draw() {
 }
 
 function moveFlockTarget() {
-  flockTargetX = width / 2 + sin(frameCount * 0.01) * 180
-  flockTargetY = height / 2 + cos(frameCount * 0.013) * 80
+  flockTargetX = width / 2 + sin(frameCount * 0.01) * 220
+  flockTargetY = height / 2 + cos(frameCount * 0.013) * 100
 }
 
 function drawFlockTarget() {
   fill(255, 200, 60)
   noStroke()
-  ellipse(flockTargetX, flockTargetY, 10, 10)
+  ellipse(flockTargetX, flockTargetY, 14, 14)
 }
 
 function updateBirds() {
@@ -39,7 +38,7 @@ function updateBirds() {
     for (let otherBird of birds) {
       let distanceBetweenBirds = dist(bird.x, bird.y, otherBird.x, otherBird.y)
 
-      if (otherBird != bird && distanceBetweenBirds < 18) {
+      if (otherBird !== bird && distanceBetweenBirds < 18) {
         bird.xSpeed += (bird.x - otherBird.x) * 0.01
         bird.ySpeed += (bird.y - otherBird.y) * 0.01
       }
@@ -48,14 +47,14 @@ function updateBirds() {
     bird.xSpeed += (flockTargetX - bird.x) * 0.0008
     bird.ySpeed += (flockTargetY - bird.y) * 0.0008
 
-    bird.xSpeed += random(-0.03, 0.03)
-    bird.ySpeed += random(-0.03, 0.03)
-
     let birdSpeed = sqrt(bird.xSpeed * bird.xSpeed + bird.ySpeed * bird.ySpeed)
 
     if (birdSpeed < 0.01) {
       birdSpeed = 0.01
     }
+
+    bird.xSpeed += random(-0.05, 0.05)
+    bird.ySpeed += random(-0.05, 0.05)
 
     bird.xSpeed = bird.xSpeed / birdSpeed * 2.2
     bird.ySpeed = bird.ySpeed / birdSpeed * 2.2
@@ -74,8 +73,8 @@ function drawBirds() {
     push()
     translate(bird.x, bird.y)
     rotate(atan2(bird.ySpeed, bird.xSpeed))
-    line(-6, -2, 0, 0)
-    line(0, 0, -6, 2)
+    line(-6, 2, 0, -2)
+    line(0, -2, 6, 2)
     pop()
   }
 }
