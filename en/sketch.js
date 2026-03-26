@@ -2,13 +2,14 @@ let birds = []
 
 function setup() {
   createCanvas(700, 450)
-  
-  birds.push({
-    x: 200,
-    y: 250,
-    xSpeed: 2,
-    ySpeed: -1
-  })
+  for (let count = 0; count < 40; count++) {
+    birds.push({
+      x: random(width),
+      y: random(height),
+      xSpeed: random(1, 3),
+      ySpeed: random(-1, 1)
+    })
+  }
 }
 
 function draw() {
