@@ -35,6 +35,8 @@ function drawFlockTarget() {
 
 function updateBirds() {
   for (let bird of birds) {
+    bird.xSpeed += (flockTargetX - bird.x) * 0.0008
+    bird.ySpeed += (flockTargetY - bird.y) * 0.0008
     bird.x += bird.xSpeed
     bird.y += bird.ySpeed
   }
