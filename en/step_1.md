@@ -1,45 +1,70 @@
-## What you will make
-OR
-## What you will do - change meta if you use this
+## Set the stage
 
-A brief description - one or two sentences. 
 
---- print-only ---
+### Step 1
+Title for each instruction if more than one instrution on a page
 
-![ALT TEXT](images/IMAGE.png)
 
---- /print-only ---
+--- code ---
+---
+language: python
+filename: main.py
+line_numbers: true
+line_number_start: 10
+line_highlights: 11
+---
 
---- no-print ---
+Put code here
 
-[Editor embed](https://editor.raspberrypi.org/en/embed/viewer/project-slug)
+--- /code ---
 
---- /no-print ---
 
---- no-print ---
+### Now run your code
+This is what you should see when you run your code.
 
-Video embed
 
-<video width="640" height="360" controls>
-<source src="images/videoname.mp4" type="video/mp4">
-</video>
-
-Youtube embed 
-<html>
-<div style="position: relative; overflow: hidden; padding-top: 56.25%;">
-<iframe style="position: absolute; top: 0; left: 0; right: 0; width: 100%; height: 100%; border: none;" src="https://www.youtube.com/embed/XXXXXXXXX?rel=0&cc_load_policy=1" allowfullscreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share">
-</iframe>
-</div><br>
-</html>
-
-Scratch embed
-<div class="scratch-preview">
- <iframe allowtransparency="true" width="485" height="402" src="https://scratch.mit.edu/projects/embed/XXXXXXXXX/?autostart=false" frameborder="0"></iframe>
+<div class="c-project-output">
+```
+WHAT THEY SHOULD SEE IF OUTPUT IS TEXT - OTHERWISE USE IMAGE
+```
 </div>
 
---- /no-print ---
 
-### You will need:
-- a
-- b
-- c
+<div class="c-project-output">
+<iframe src="https://editor.raspberrypi.org/en/embed/viewer/editor-turtle-snowflakes-complete" width="600" height="600" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen> </iframe>
+</div>
+
+
+> ### Tip
+> 
+> TIPS HERE
+{: .c-project-callout .c-project-callout--tip}
+
+
+> ### Debugging
+> 
+> DEBUG HERE
+{: .c-project-callout .c-project-callout--debug}
+
+
+
+Add code inline using `upticks` only
+
+
+Use ordered and unordered lists to break up long text
+- First item
+- Second item
+- Third item
+
+1. First item
+2. Second item
+3. Third item
+
+
+![alt text](image.jpg)
+
+
+[title](https://www.link.com)
+
+
+**bold text**
