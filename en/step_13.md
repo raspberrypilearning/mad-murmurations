@@ -1,70 +1,73 @@
-## Main title
-
+## Point the birds the right way
 
 ### Step 1
-Title for each instruction if more than one instrution on a page
+In the `drawBirds()` function, use `push()` and `pop()` so each bird can be drawn on its own. Then use `translate()` to move the drawing point to the bird's position.
 
+This means the bird is now drawn with `(0, 0)` at its centre, instead of using `bird.x` and `bird.y` in every `line()` command.
 
 --- code ---
 ---
-language: python
-filename: main.py
+language: javascript
+filename: sketch.js
 line_numbers: true
-line_number_start: 10
-line_highlights: 11
+line_number_start: 67
+line_highlights: 73-77
 ---
+function drawBirds() {
+  stroke(255)
+  strokeWeight(2)
+  noFill()
 
-Put code here
-
+  for (let bird of birds) {
+    push()
+    translate(bird.x, bird.y)
+    line(-6, 2, 0, -2)
+    line(0, -2, 6, 2)
+    pop()
+  }
+}
 --- /code ---
 
+### Step 2
+Now add `rotate()` so each bird points in the direction it is flying. `atan2()` works out the angle from the bird's `xSpeed` and `ySpeed`.
+
+--- code ---
+---
+language: javascript
+filename: sketch.js
+line_numbers: true
+line_number_start: 67
+line_highlights: 75
+---
+function drawBirds() {
+  stroke(255)
+  strokeWeight(2)
+  noFill()
+
+  for (let bird of birds) {
+    push()
+    translate(bird.x, bird.y)
+    rotate(atan2(bird.ySpeed, bird.xSpeed))
+    line(-6, 2, 0, -2)
+    line(0, -2, 6, 2)
+    pop()
+  }
+}
+--- /code ---
 
 ### Now run your code
 This is what you should see when you run your code.
 
+![](images/step_13.gif)
 
-<div class="c-project-output">
-```
-WHAT THEY SHOULD SEE IF OUTPUT IS TEXT - OTHERWISE USE IMAGE
-```
-</div>
-
-
-<div class="c-project-output">
-<iframe src="https://editor.raspberrypi.org/en/embed/viewer/editor-turtle-snowflakes-complete" width="600" height="600" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen> </iframe>
-</div>
-
-
-> ### Tip
-> 
-> TIPS HERE
+### Tip
 {: .c-project-callout .c-project-callout--tip}
+- After using `translate(bird.x, bird.y)`, the middle of the bird is at `(0, 0)`.
+- Try changing the line numbers to make your birds wider, taller, or pointier.
+- Watch how the birds now turn to face the way they are flying.
 
-
-> ### Debugging
-> 
-> DEBUG HERE
+### Debugging
 {: .c-project-callout .c-project-callout--debug}
-
-
-
-Add code inline using `upticks` only
-
-
-Use ordered and unordered lists to break up long text
-- First item
-- Second item
-- Third item
-
-1. First item
-2. Second item
-3. Third item
-
-
-![alt text](image.jpg)
-
-
-[title](https://www.link.com)
-
-
-**bold text**
+- Make sure `push()`, `translate()`, `rotate()`, and `pop()` are all inside the `for` loop.
+- Check that you changed both `line()` commands to use the new coordinates.
+- If the birds look strange, make sure you used `line(-6, 2, 0, -2)` and `line(0, -2, 6, 2)`.

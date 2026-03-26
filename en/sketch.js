@@ -6,8 +6,8 @@ function setup() {
   createCanvas(700, 450)
   for (let count = 0; count < 40; count++) {
     birds.push({
-      x: random(width),
-      y: random(height),
+      x: width / 2 + random(-60, 60),
+      y: height / 2 + random(-30, 30),
       xSpeed: random(1, 3),
       ySpeed: random(-1, 1)
     })
@@ -70,10 +70,24 @@ function drawBirds() {
   noFill()
 
   for (let bird of birds) {
-    line(bird.x - 6, bird.y + 2, bird.x, bird.y - 2)
-    line(bird.x, bird.y - 2, bird.x + 6, bird.y + 2)
+    push()
+    translate(bird.x, bird.y)
+    rotate(atan2(bird.ySpeed, bird.xSpeed))
+    line(-6, 2, 0, -2)
+    line(0, -2, 6, 2)
+    pop()
   }
 }
 
 function mousePressed() {
+  for (let bird of birds) {
+    let distanceFromMouse = dist(mouseX, mouseY, bird.x, bird.y)
+
+    if (distanceFromMouse < 120) {
+      bird.x += (bird.x - mouseX) * 0.2
+      bird.y += (bird.y - mouseY) * 0.2
+      bird.xSpeed += (bird.x - mouseX) * 0.02
+      bird.ySpeed += (bird.y - mouseY) * 0.02
+    }
+  }
 }
