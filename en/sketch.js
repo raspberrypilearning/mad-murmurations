@@ -29,8 +29,13 @@ function updateBirds() {
 }
 
 function drawBirds() {
+  stroke(255)
+  strokeWeight(2)
+  noFill()
+
   for (let bird of birds) {
-    ellipse(bird.x, bird.y, 12, 12)
+    line(bird.x - 6, bird.y + 2, bird.x, bird.y - 2)
+    line(bird.x, bird.y - 2, bird.x + 6, bird.y + 2)
   }
 }
 

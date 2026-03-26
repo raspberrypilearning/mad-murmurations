@@ -82,7 +82,7 @@ function drawBirds() {
 ### Now run your code
 This is what you should see when you run your code.
 
-![](step_2.png)
+![](images/step_2.png)
 
 ### Tip
 {: .c-project-callout .c-project-callout--tip}

@@ -1,70 +1,87 @@
-## Main title
-
+## Give your bird some wings
 
 ### Step 1
-Title for each instruction if more than one instrution on a page
-
+In the `drawBirds()` function, choose a colour for your bird and how thick its wings should be. `noFill()` tells p5 not to colour in the middle of the shape.
 
 --- code ---
 ---
-language: python
-filename: main.py
+language: javascript
+filename: sketch.js
 line_numbers: true
-line_number_start: 10
-line_highlights: 11
+line_number_start: 31
+line_highlights: 32-34
 ---
+function drawBirds() {
+  stroke(255)
+  strokeWeight(2)
+  noFill()
 
-Put code here
-
+  for (let bird of birds) {
+    ellipse(bird.x, bird.y, 12, 12)
+  }
+}
 --- /code ---
 
+### Step 2
+Now replace the circle with one wing. The `line()` function needs 4 values: the start `x` and `y`, and the end `x` and `y`.
+
+--- code ---
+---
+language: javascript
+filename: sketch.js
+line_numbers: true
+line_number_start: 31
+line_highlights: 37
+---
+function drawBirds() {
+  stroke(255)
+  strokeWeight(2)
+  noFill()
+
+  for (let bird of birds) {
+    line(bird.x - 6, bird.y + 2, bird.x, bird.y - 2)
+  }
+}
+--- /code ---
+
+### Step 3
+Add a second line to make the other wing. Now your bird will look like it is flying.
+
+--- code ---
+---
+language: javascript
+filename: sketch.js
+line_numbers: true
+line_number_start: 31
+line_highlights: 38
+---
+function drawBirds() {
+  stroke(255)
+  strokeWeight(2)
+  noFill()
+
+  for (let bird of birds) {
+    line(bird.x - 6, bird.y + 2, bird.x, bird.y - 2)
+    line(bird.x, bird.y - 2, bird.x + 6, bird.y + 2)
+  }
+}
+--- /code ---
 
 ### Now run your code
 This is what you should see when you run your code.
 
+![](images/step_3.png)
 
-<div class="c-project-output">
-```
-WHAT THEY SHOULD SEE IF OUTPUT IS TEXT - OTHERWISE USE IMAGE
-```
-</div>
-
-
-<div class="c-project-output">
-<iframe src="https://editor.raspberrypi.org/en/embed/viewer/editor-turtle-snowflakes-complete" width="600" height="600" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen> </iframe>
-</div>
-
-
-> ### Tip
-> 
-> TIPS HERE
+### Tip
 {: .c-project-callout .c-project-callout--tip}
 
+- Change the numbers in the `line()` commands to make your bird’s wings wider, taller, or pointier.
+- Try changing the colour in `stroke()` to make birds or bats for day time, sunset, or night.
+- Increase `strokeWeight()` to make chunkier wings.
 
-> ### Debugging
-> 
-> DEBUG HERE
+### Debugging
 {: .c-project-callout .c-project-callout--debug}
 
-
-
-Add code inline using `upticks` only
-
-
-Use ordered and unordered lists to break up long text
-- First item
-- Second item
-- Third item
-
-1. First item
-2. Second item
-3. Third item
-
-
-![alt text](image.jpg)
-
-
-[title](https://www.link.com)
-
-
-**bold text**
+- Each `line()` command needs 4 numbers or values, separated by commas.
+- Make sure both `line()` commands are inside the `for` loop.
+- Check that you have spelled `bird.x` and `bird.y` correctly each time.
