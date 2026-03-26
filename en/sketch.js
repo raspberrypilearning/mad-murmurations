@@ -23,6 +23,8 @@ function draw() {
 }
 
 function moveFlockTarget() {
+  flockTargetX = width / 2 + sin(frameCount * 0.01) * 220
+  flockTargetY = height / 2 + cos(frameCount * 0.013) * 100
 }
 
 function drawFlockTarget() {

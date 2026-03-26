@@ -1,70 +1,68 @@
-## Main title
-
+## Make the target move
 
 ### Step 1
-Title for each instruction if more than one instrution on a page
-
+In the `moveFlockTarget()` function, make the target move from left to right. `width / 2` starts it in the middle of the canvas, and `sin(frameCount * 0.01)` makes it glide smoothly.
 
 --- code ---
 ---
-language: python
-filename: main.py
+language: javascript
+filename: sketch.js
 line_numbers: true
-line_number_start: 10
-line_highlights: 11
+line_number_start: 25
+line_highlights: 26
 ---
-
-Put code here
-
+function moveFlockTarget() {
+  flockTargetX = width / 2 + sin(frameCount * 0.01) * 180
+}
 --- /code ---
 
+### Step 2
+Now make the target move up and down as well. This gives it a smooth path through the sky.
+
+--- code ---
+---
+language: javascript
+filename: sketch.js
+line_numbers: true
+line_number_start: 25
+line_highlights: 27
+---
+function moveFlockTarget() {
+  flockTargetX = width / 2 + sin(frameCount * 0.01) * 180
+  flockTargetY = height / 2 + cos(frameCount * 0.013) * 80
+}
+--- /code ---
+
+### Step 3
+Try changing how far the target travels. Bigger numbers make the path wider or taller.
+
+--- code ---
+---
+language: javascript
+filename: sketch.js
+line_numbers: true
+line_number_start: 25
+line_highlights: 26-27
+---
+function moveFlockTarget() {
+  flockTargetX = width / 2 + sin(frameCount * 0.01) * 220
+  flockTargetY = height / 2 + cos(frameCount * 0.013) * 100
+}
+--- /code ---
 
 ### Now run your code
 This is what you should see when you run your code.
 
+![](images/step_7.gif)
 
-<div class="c-project-output">
-```
-WHAT THEY SHOULD SEE IF OUTPUT IS TEXT - OTHERWISE USE IMAGE
-```
-</div>
-
-
-<div class="c-project-output">
-<iframe src="https://editor.raspberrypi.org/en/embed/viewer/editor-turtle-snowflakes-complete" width="600" height="600" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen> </iframe>
-</div>
-
-
-> ### Tip
-> 
-> TIPS HERE
+### Tip
 {: .c-project-callout .c-project-callout--tip}
+- Try changing `0.01` or `0.013` to make the target move faster or slower.
+- Try changing `220` or `100` to make the target travel in a bigger or smaller path.
+- Watch the target carefully and think about the shape it is making.
 
-
-> ### Debugging
-> 
-> DEBUG HERE
+### Debugging
 {: .c-project-callout .c-project-callout--debug}
-
-
-
-Add code inline using `upticks` only
-
-
-Use ordered and unordered lists to break up long text
-- First item
-- Second item
-- Third item
-
-1. First item
-2. Second item
-3. Third item
-
-
-![alt text](image.jpg)
-
-
-[title](https://www.link.com)
-
-
-**bold text**
+- Make sure you type `flockTargetX` and `flockTargetY` exactly the same way each time.
+- Check that `sin()` and `cos()` both have brackets `()`.
+- Make sure both lines are inside the `moveFlockTarget()` function.
