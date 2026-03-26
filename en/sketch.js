@@ -37,6 +37,16 @@ function updateBirds() {
   for (let bird of birds) {
     bird.xSpeed += (flockTargetX - bird.x) * 0.0008
     bird.ySpeed += (flockTargetY - bird.y) * 0.0008
+
+    let birdSpeed = sqrt(bird.xSpeed * bird.xSpeed + bird.ySpeed * bird.ySpeed)
+
+    if (birdSpeed < 0.01) {
+      birdSpeed = 0.01
+    }
+
+    bird.xSpeed = bird.xSpeed / birdSpeed * 2.2
+    bird.ySpeed = bird.ySpeed / birdSpeed * 2.2
+
     bird.x += bird.xSpeed
     bird.y += bird.ySpeed
   }
