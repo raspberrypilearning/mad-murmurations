@@ -1,70 +1,51 @@
-## Main title
+## Add a little wobble
 
-
-### Step 1
-Title for each instruction if more than one instrution on a page
-
+In the `updateBirds()` function, add a tiny random change to `xSpeed` and `ySpeed`. This will stop the birds all moving in exactly the same way.
 
 --- code ---
 ---
-language: python
-filename: main.py
+language: javascript
+filename: sketch.js
 line_numbers: true
-line_number_start: 10
-line_highlights: 11
+line_number_start: 36
+line_highlights: 47
 ---
+function updateBirds() {
+  for (let bird of birds) {
+    bird.xSpeed += (flockTargetX - bird.x) * 0.0008
+    bird.ySpeed += (flockTargetY - bird.y) * 0.0008
 
-Put code here
+    let birdSpeed = sqrt(bird.xSpeed * bird.xSpeed + bird.ySpeed * bird.ySpeed)
 
+    if (birdSpeed < 0.01) {
+      birdSpeed = 0.01
+    }
+
+    bird.xSpeed += random(-0.03, 0.03)
+    bird.ySpeed += random(-0.03, 0.03)
+
+    bird.xSpeed = bird.xSpeed / birdSpeed * 2.2
+    bird.ySpeed = bird.ySpeed / birdSpeed * 2.2
+
+    bird.x += bird.xSpeed
+    bird.y += bird.ySpeed
+  }
+}
 --- /code ---
-
 
 ### Now run your code
 This is what you should see when you run your code.
 
+![](images/step_10.gif)
 
-<div class="c-project-output">
-```
-WHAT THEY SHOULD SEE IF OUTPUT IS TEXT - OTHERWISE USE IMAGE
-```
-</div>
-
-
-<div class="c-project-output">
-<iframe src="https://editor.raspberrypi.org/en/embed/viewer/editor-turtle-snowflakes-complete" width="600" height="600" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen> </iframe>
-</div>
-
-
-> ### Tip
-> 
-> TIPS HERE
+### Tip
 {: .c-project-callout .c-project-callout--tip}
+- Try smaller random numbers to make the flock calmer.
+- Try bigger random numbers to make the flock wobblier and more chaotic.
+- Small changes often look best here.
 
-
-> ### Debugging
-> 
-> DEBUG HERE
+### Debugging
 {: .c-project-callout .c-project-callout--debug}
-
-
-
-Add code inline using `upticks` only
-
-
-Use ordered and unordered lists to break up long text
-- First item
-- Second item
-- Third item
-
-1. First item
-2. Second item
-3. Third item
-
-
-![alt text](image.jpg)
-
-
-[title](https://www.link.com)
-
-
-**bold text**
+- Make sure both `random()` lines are inside the `for` loop.
+- Check that you are using brackets `()` in `random(-0.03, 0.03)`.
+- If your birds move too wildly, check that you have not used numbers that are too large.

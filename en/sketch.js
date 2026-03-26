@@ -35,6 +35,15 @@ function drawFlockTarget() {
 
 function updateBirds() {
   for (let bird of birds) {
+    for (let otherBird of birds) {
+      let distanceBetweenBirds = dist(bird.x, bird.y, otherBird.x, otherBird.y)
+
+      if (otherBird !== bird && distanceBetweenBirds < 18) {
+        bird.xSpeed += (bird.x - otherBird.x) * 0.01
+        bird.ySpeed += (bird.y - otherBird.y) * 0.01
+      }
+    }
+
     bird.xSpeed += (flockTargetX - bird.x) * 0.0008
     bird.ySpeed += (flockTargetY - bird.y) * 0.0008
 
@@ -43,6 +52,9 @@ function updateBirds() {
     if (birdSpeed < 0.01) {
       birdSpeed = 0.01
     }
+
+    bird.xSpeed += random(-0.05, 0.05)
+    bird.ySpeed += random(-0.05, 0.05)
 
     bird.xSpeed = bird.xSpeed / birdSpeed * 2.2
     bird.ySpeed = bird.ySpeed / birdSpeed * 2.2
