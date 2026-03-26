@@ -74,14 +74,12 @@ This is what you should see when you run your code.
 
 ### Tip
 {: .c-project-callout .c-project-callout--tip}
-
 - Change the numbers in the `line()` commands to make your bird’s wings wider, taller, or pointier.
 - Try changing the colour in `stroke()` to make birds or bats for day time, sunset, or night.
 - Increase `strokeWeight()` to make chunkier wings.
 
 ### Debugging
 {: .c-project-callout .c-project-callout--debug}
-
 - Each `line()` command needs 4 numbers or values, separated by commas.
 - Make sure both `line()` commands are inside the `for` loop.
 - Check that you have spelled `bird.x` and `bird.y` correctly each time.

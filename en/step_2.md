@@ -86,12 +86,10 @@ This is what you should see when you run your code.
 
 ### Tip
 {: .c-project-callout .c-project-callout--tip}
-
 - Try changing the `x` and `y` values in the `setup()` function to place your bird in a different part of the canvas.
 - The last two numbers in the `ellipse()` function will change the size of your bird.
 
 ### Debugging
 {: .c-project-callout .c-project-callout--debug}
-
 - Make sure you use commas between each piece of information.
 - Check that you have opened and closed both curly brackets `{}`.

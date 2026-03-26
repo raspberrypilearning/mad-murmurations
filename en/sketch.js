@@ -26,6 +26,10 @@ function drawFlockTarget() {
 }
 
 function updateBirds() {
+  for (let bird of birds) {
+    bird.x += bird.xSpeed
+    bird.y += bird.ySpeed
+  }
 }
 
 function drawBirds() {

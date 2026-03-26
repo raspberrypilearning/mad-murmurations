@@ -1,70 +1,55 @@
-## Main title
-
+## Make your bird fly
 
 ### Step 1
-Title for each instruction if more than one instrution on a page
-
+In the `updateBirds()` function, add a loop so the program can update every bird. Then change `bird.x` by `bird.xSpeed`. This makes the bird move left or right.
 
 --- code ---
 ---
-language: python
-filename: main.py
+language: javascript
+filename: sketch.js
 line_numbers: true
-line_number_start: 10
-line_highlights: 11
+line_number_start: 28
+line_highlights: 29-31
 ---
-
-Put code here
-
+function updateBirds() {
+  for (let bird of birds) {
+    bird.x += bird.xSpeed
+  }
+}
 --- /code ---
 
+### Step 2
+Now add `bird.y += bird.ySpeed` inside the loop. This makes the bird move up or down as well.
+
+--- code ---
+---
+language: javascript
+filename: sketch.js
+line_numbers: true
+line_number_start: 29
+line_highlights: 31
+---
+function updateBirds() {
+  for (let bird of birds) {
+    bird.x += bird.xSpeed
+    bird.y += bird.ySpeed
+  }
+}
+--- /code ---
 
 ### Now run your code
 This is what you should see when you run your code.
 
+![](images/step_4.gif)
 
-<div class="c-project-output">
-```
-WHAT THEY SHOULD SEE IF OUTPUT IS TEXT - OTHERWISE USE IMAGE
-```
-</div>
-
-
-<div class="c-project-output">
-<iframe src="https://editor.raspberrypi.org/en/embed/viewer/editor-turtle-snowflakes-complete" width="600" height="600" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen> </iframe>
-</div>
-
-
-> ### Tip
-> 
-> TIPS HERE
+### Tip
 {: .c-project-callout .c-project-callout--tip}
+- Try changing `xSpeed` and `ySpeed` in your `setup()` function to make your bird fly in different directions.
+- A bigger number makes the bird move faster.
+- A negative `xSpeed` moves the bird left, and a negative `ySpeed` moves the bird up.
 
-
-> ### Debugging
-> 
-> DEBUG HERE
+### Debugging
 {: .c-project-callout .c-project-callout--debug}
-
-
-
-Add code inline using `upticks` only
-
-
-Use ordered and unordered lists to break up long text
-- First item
-- Second item
-- Third item
-
-1. First item
-2. Second item
-3. Third item
-
-
-![alt text](image.jpg)
-
-
-[title](https://www.link.com)
-
-
-**bold text**
+- Make sure both new lines are inside the `for` loop.
+- Check that you have spelled `bird.xSpeed` and `bird.ySpeed` correctly.
+- Remember to use `+=` to add the speed to the position.
