@@ -15,7 +15,7 @@ function setup() {
 }
 
 function draw() {
-  background(50, 90, 200)
+  background(50, 90, 200, 100)
   moveFlockTarget()
   drawFlockTarget()
   updateBirds()
