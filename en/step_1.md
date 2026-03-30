@@ -42,7 +42,7 @@ This is what you should see when you run your code.
 
 ![](images/step_1.png)
 
-<div class=c-project-callout c-project-callout--tip>
+<div class="c-project-callout c-project-callout--tip">
 ### Tip
 - Change the size of your canvas so it fills as much space on your screen as possible.
 - Think about what background you would like for your creatures to fly in. Are they starlings at sunset, or bats at midnight?
